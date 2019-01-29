@@ -1,0 +1,30 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+../includes/libft.h
+string.h
+-
+stdlib.h
+-
+limits.h
+-
+errno.h
+-
+
+../includes/mlx.h
+
+/Users/vlytvyne/Desktop/fdf/main.c
+mlx.h
+/Users/vlytvyne/Desktop/fdf/mlx.h
+libft.h
+/Users/vlytvyne/Desktop/fdf/libft.h
+stdio.h
+-
+math.h
+-
+
