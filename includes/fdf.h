@@ -19,6 +19,12 @@
 #  include <stdio.h>
 # include <math.h>
 
+typedef struct	s_point
+{
+	t_coor		coor;
+	int 		color;
+}				t_point;
+
 void		draw_line(t_coor p1, t_coor p2, int color);
 
 #  ifdef MAIN
