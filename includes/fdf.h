@@ -1,33 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   fdf.h                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vlytvyne <vlytvyne@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/01/28 20:43:18 by vlytvyne          #+#    #+#             */
-/*   Updated: 2019/01/29 16:38:23 by vlytvyne         ###   ########.fr       */
+/*   Created: 2019/01/30 18:29:26 by vlytvyne          #+#    #+#             */
+/*   Updated: 2019/01/30 18:29:28 by vlytvyne         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#define MAIN
-#include <fcntl.h>
-#include <unistd.h>
-#include "fdf.h"
+#ifndef H_FDF
+# define H_FDF
 
+# include "mlx.h"
+# include "libft.h"
+# include "get_next_line.h"
+#  include <stdio.h>
+# include <math.h>
 
+void		draw_line(t_coor p1, t_coor p2, int color);
 
-int		main(int argc, char **argv)
-{
-	if (argc != 2)
-		show_usage("./fdf <filename.fdf>");
-	int fd = open(argv[1], O_RDONLY);
-	t_coor p1 = {2, 2};
-	t_coor p2 = {32, 3};
+#  ifdef MAIN
+void	*g_conn;
+void	*g_win;
+#  else
+extern void	*g_conn;
+extern void	*g_win;
+#  endif
 
-	g_conn = mlx_init();
-	g_win = mlx_new_window(g_conn, 1000, 800, "FDF");
-	draw_line(p1, p2, 0xFF0000);
-	mlx_loop(g_conn);
-	close(fd);
-}
+#endif

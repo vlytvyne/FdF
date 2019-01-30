@@ -84,7 +84,7 @@
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="/Users/vlytvyne/Desktop/fdf/libft.a">
+		<Unit filename="/Users/vlytvyne/Desktop/fdf/draw_line.c">
 			<Option target="fdf"/>
 		</Unit>
 		<Unit filename="/Users/vlytvyne/Desktop/fdf/main.c">

@@ -4,6 +4,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_C
+  "/Users/vlytvyne/Desktop/fdf/draw_line.c" "/Users/vlytvyne/Desktop/fdf/cmake-build-debug/CMakeFiles/fdf.dir/draw_line.c.o"
   "/Users/vlytvyne/Desktop/fdf/main.c" "/Users/vlytvyne/Desktop/fdf/cmake-build-debug/CMakeFiles/fdf.dir/main.c.o"
   )
 set(CMAKE_C_COMPILER_ID "AppleClang")

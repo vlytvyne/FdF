@@ -2,7 +2,7 @@ cmake_minimum_required(VERSION 3.12)
 project(fdf)
 
 include_directories(includes)
-set(SRC main.c libft.a)
+set(SRC main.c draw_line.c)
 
 add_executable(fdf ${SRC})
 

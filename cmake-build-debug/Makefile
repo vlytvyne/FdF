@@ -123,6 +123,33 @@ fdf/fast:
 	$(MAKE) -f CMakeFiles/fdf.dir/build.make CMakeFiles/fdf.dir/build
 .PHONY : fdf/fast
 
+draw_line.o: draw_line.c.o
+
+.PHONY : draw_line.o
+
+# target to build an object file
+draw_line.c.o:
+	$(MAKE) -f CMakeFiles/fdf.dir/build.make CMakeFiles/fdf.dir/draw_line.c.o
+.PHONY : draw_line.c.o
+
+draw_line.i: draw_line.c.i
+
+.PHONY : draw_line.i
+
+# target to preprocess a source file
+draw_line.c.i:
+	$(MAKE) -f CMakeFiles/fdf.dir/build.make CMakeFiles/fdf.dir/draw_line.c.i
+.PHONY : draw_line.c.i
+
+draw_line.s: draw_line.c.s
+
+.PHONY : draw_line.s
+
+# target to generate assembly for a file
+draw_line.c.s:
+	$(MAKE) -f CMakeFiles/fdf.dir/build.make CMakeFiles/fdf.dir/draw_line.c.s
+.PHONY : draw_line.c.s
+
 main.o: main.c.o
 
 .PHONY : main.o
@@ -159,6 +186,9 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
 	@echo "... fdf"
+	@echo "... draw_line.o"
+	@echo "... draw_line.i"
+	@echo "... draw_line.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"

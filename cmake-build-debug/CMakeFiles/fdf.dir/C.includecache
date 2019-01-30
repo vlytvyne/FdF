@@ -6,6 +6,20 @@
 
 #IncludeRegexTransform: 
 
+../includes/fdf.h
+mlx.h
+../includes/mlx.h
+libft.h
+../includes/libft.h
+get_next_line.h
+../includes/get_next_line.h
+stdio.h
+-
+math.h
+-
+
+../includes/get_next_line.h
+
 ../includes/libft.h
 string.h
 -
@@ -19,12 +33,8 @@ errno.h
 ../includes/mlx.h
 
 /Users/vlytvyne/Desktop/fdf/main.c
-mlx.h
-/Users/vlytvyne/Desktop/fdf/mlx.h
-libft.h
-/Users/vlytvyne/Desktop/fdf/libft.h
-stdio.h
+fcntl.h
 -
-math.h
--
+fdf.h
+/Users/vlytvyne/Desktop/fdf/fdf.h
 
