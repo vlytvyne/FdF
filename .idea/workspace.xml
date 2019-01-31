@@ -13,26 +13,15 @@
   <component name="ChangeListManager">
     <list default="true" id="a1383a0c-0c65-430b-b8c8-3df48633f1ec" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/10-2.fdf" beforeDir="false" afterPath="$PROJECT_DIR$/10-2.fdf" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/a.out" beforeDir="false" afterPath="$PROJECT_DIR$/a.out" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/fdf.dir/C.includecache" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/fdf.dir/C.includecache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/fdf.dir/draw_line.c.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/fdf.dir/draw_line.c.o" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/fdf.dir/main.c.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/fdf.dir/main.c.o" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/fdf" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/fdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fdf/fdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/fdf/maps/42.fdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/fdf/maps/elem-col.fdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/fdf/maps/elem-fract.fdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/fdf/maps/elem.fdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/fdf/maps/elem2.fdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/fdf/maps/julia.fdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/fdf/maps/mars.fdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/fdf/maps/t1.fdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/fdf/maps/t2.fdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/draw_line.c" beforeDir="false" afterPath="$PROJECT_DIR$/draw_line.c" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/includes/fdf.h" beforeDir="false" afterPath="$PROJECT_DIR$/includes/fdf.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.c" beforeDir="false" afterPath="$PROJECT_DIR$/main.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/maps/10-2.fdf" beforeDir="false" afterPath="$PROJECT_DIR$/maps/10-2.fdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/maps/plat.fdf" beforeDir="false" afterPath="$PROJECT_DIR$/maps/plat.fdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/maps/pyramide.fdf" beforeDir="false" afterPath="$PROJECT_DIR$/maps/pyramide.fdf" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/cmake-build-debug/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -50,10 +39,14 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/main.c">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="481">
-              <caret line="56" column="45" selection-start-line="56" selection-start-column="45" selection-end-line="56" selection-end-column="45" />
+            <state relative-caret-position="577">
+              <caret line="144" column="56" selection-start-line="144" selection-start-column="56" selection-end-line="144" selection-end-column="56" />
               <folding>
-                <element signature="e#905#923#0" expanded="true" />
+                <element signature="e#949#1419#0" />
+                <element signature="e#2006#2286#0" />
+                <element signature="e#2288#2326#0" />
+                <element signature="e#2325#2641#0" />
+                <element signature="e#2640#2923#0" />
               </folding>
             </state>
           </provider>
@@ -62,9 +55,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/draw_line.c">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="982">
-              <caret line="72" column="12" lean-forward="true" selection-start-line="72" selection-start-column="12" selection-end-line="72" selection-end-column="12" />
-              <caret line="73" column="12" lean-forward="true" selection-start-line="73" selection-start-column="12" selection-end-line="73" selection-end-column="12" />
+            <state relative-caret-position="1180">
+              <caret line="59" selection-start-line="59" selection-end-line="59" />
             </state>
           </provider>
         </entry>
@@ -72,21 +64,11 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/includes/fdf.h">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="480">
-              <caret line="24" column="22" selection-start-line="24" selection-start-column="22" selection-end-line="24" selection-end-column="22" />
+            <state relative-caret-position="600">
+              <caret line="30" column="17" selection-start-line="30" selection-start-column="17" selection-end-line="30" selection-end-column="17" />
               <folding>
                 <element signature="e#922#939#0" expanded="true" />
-                <element signature="e#1066#1092#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="80">
-              <caret line="4" column="26" selection-start-line="4" selection-start-column="26" selection-end-line="4" selection-end-column="26" />
             </state>
           </provider>
         </entry>
@@ -105,7 +87,16 @@
       <find>y</find>
       <find>fabsÎÎ</find>
       <find>printf</find>
+      <find>g_win</find>
+      <find>g_conn</find>
+      <find>tokens_number</find>
+      <find>malloc</find>
     </findStrings>
+    <replaceStrings>
+      <replace>conn</replace>
+      <replace>win</replace>
+      <replace>map_width</replace>
+    </replaceStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -114,8 +105,8 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/CMakeLists.txt" />
-        <option value="$PROJECT_DIR$/draw_line.c" />
         <option value="$PROJECT_DIR$/includes/libft.h" />
+        <option value="$PROJECT_DIR$/draw_line.c" />
         <option value="$PROJECT_DIR$/includes/fdf.h" />
         <option value="$PROJECT_DIR$/main.c" />
       </list>
@@ -131,6 +122,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -138,11 +130,15 @@
               <item name="fdf" type="b2602c69:ProjectViewProjectNode" />
               <item name="fdf" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="fdf" type="b2602c69:ProjectViewProjectNode" />
+              <item name="fdf" type="462c0819:PsiDirectoryNode" />
+              <item name="includes" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -150,7 +146,7 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="restartRequiresConfirmation" value="false" />
-    <property name="settings.editor.selected.configurable" value="preferences.keymap" />
+    <property name="settings.editor.selected.configurable" value="dynamic.analysis.tools.valgrind" />
   </component>
   <component name="RunAnythingCache">
     <option name="myCommands">
@@ -193,12 +189,14 @@
       <workItem from="1548772731212" duration="5855000" />
       <workItem from="1548864325370" duration="27000" />
       <workItem from="1548864379735" duration="2382000" />
-      <workItem from="1548866970116" duration="5891000" />
+      <workItem from="1548866970116" duration="6306000" />
+      <workItem from="1548929159244" duration="6764000" />
+      <workItem from="1548948322498" duration="1097000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="17889000" />
+    <option name="totallyTimeSpent" value="26165000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -211,9 +209,10 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="2560" height="1440" extended-state="0" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4982497" visible="true" weight="0.14098491" />
-      <window_info id="Structure" order="1" sideWeight="0.5017503" side_tool="true" weight="0.14098491" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49708286" visible="true" weight="0.14257348" />
+      <window_info id="Structure" order="1" sideWeight="0.5029172" side_tool="true" weight="0.14177918" />
       <window_info id="Favorites" order="2" sideWeight="0.50108933" side_tool="true" weight="0.14098491" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
@@ -237,14 +236,18 @@
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/main.c</url>
+          <line>80</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/includes/libft.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="560">
-          <caret line="31" column="21" selection-start-line="31" selection-start-column="21" selection-end-line="31" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="80">
@@ -252,31 +255,40 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/includes/fdf.h">
+    <entry file="file://$PROJECT_DIR$/includes/libft.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="480">
-          <caret line="24" column="22" selection-start-line="24" selection-start-column="22" selection-end-line="24" selection-end-column="22" />
+        <state relative-caret-position="129">
+          <caret line="84" column="21" lean-forward="true" selection-start-line="84" selection-start-column="21" selection-end-line="84" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main.c">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="577">
+          <caret line="144" column="56" selection-start-line="144" selection-start-column="56" selection-end-line="144" selection-end-column="56" />
           <folding>
-            <element signature="e#922#939#0" expanded="true" />
-            <element signature="e#1066#1092#0" expanded="true" />
+            <element signature="e#949#1419#0" />
+            <element signature="e#2006#2286#0" />
+            <element signature="e#2288#2326#0" />
+            <element signature="e#2325#2641#0" />
+            <element signature="e#2640#2923#0" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/draw_line.c">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="982">
-          <caret line="72" column="12" lean-forward="true" selection-start-line="72" selection-start-column="12" selection-end-line="72" selection-end-column="12" />
-          <caret line="73" column="12" lean-forward="true" selection-start-line="73" selection-start-column="12" selection-end-line="73" selection-end-column="12" />
+        <state relative-caret-position="1180">
+          <caret line="59" selection-start-line="59" selection-end-line="59" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/main.c">
+    <entry file="file://$PROJECT_DIR$/includes/fdf.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="481">
-          <caret line="56" column="45" selection-start-line="56" selection-start-column="45" selection-end-line="56" selection-end-column="45" />
+        <state relative-caret-position="600">
+          <caret line="30" column="17" selection-start-line="30" selection-start-column="17" selection-end-line="30" selection-end-column="17" />
           <folding>
-            <element signature="e#905#923#0" expanded="true" />
+            <element signature="e#922#939#0" expanded="true" />
           </folding>
         </state>
       </provider>

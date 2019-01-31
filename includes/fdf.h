@@ -25,14 +25,16 @@ typedef struct	s_point
 	int 		color;
 }				t_point;
 
-void		draw_line(t_coor p1, t_coor p2, int color);
+typedef	struct	s_conf
+{
+	void	*conn;
+	void	*win;
+	int 	map_height;
+	int 	map_width;
+	t_point	**map;
+}				t_conf;
 
-#  ifdef MAIN
-void	*g_conn;
-void	*g_win;
-#  else
-extern void	*g_conn;
-extern void	*g_win;
-#  endif
+
+void		draw_line(t_coor p1, t_coor p2, int color, t_conf conf);
 
 #endif

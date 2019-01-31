@@ -32,6 +32,10 @@ errno.h
 
 ../includes/mlx.h
 
+/Users/vlytvyne/Desktop/fdf/draw_line.c
+fdf.h
+/Users/vlytvyne/Desktop/fdf/fdf.h
+
 /Users/vlytvyne/Desktop/fdf/main.c
 fcntl.h
 -

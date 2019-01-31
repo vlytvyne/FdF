@@ -12,7 +12,7 @@
 
 #include "fdf.h"
 
-static void	draw_horizontal(t_coor p1, t_coor p2, int lenX, int lenY, int color)
+static void	draw_horizontal(t_coor p1, t_coor p2, int lenX, int lenY, int color, t_conf conf)
 {
 	int		x;
 	int		i;
@@ -32,14 +32,14 @@ static void	draw_horizontal(t_coor p1, t_coor p2, int lenX, int lenY, int color)
 		increment = -increment;
 	while (i <= lenX)
 	{
-		mlx_pixel_put(g_conn, g_win, x, round(y), color);
+		mlx_pixel_put(conf.conn, conf.win, x, round(y), color);
 		x++;
 		y += increment;
 		i++;
 	}
 }
 
-static void	draw_vertical(t_coor p1, t_coor p2, int lenX, int lenY, int color)
+static void	draw_vertical(t_coor p1, t_coor p2, int lenX, int lenY, int color, t_conf conf)
 {
 	int		y;
 	int		i;
@@ -59,7 +59,7 @@ static void	draw_vertical(t_coor p1, t_coor p2, int lenX, int lenY, int color)
 		increment = -increment;
 	while (i <= lenY)
 	{
-		mlx_pixel_put(g_conn, g_win, round(x), y, color);
+		mlx_pixel_put(conf.conn, conf.win, round(x), y, color);
 		y++;
 		x += increment;
 		i++;
@@ -68,7 +68,7 @@ static void	draw_vertical(t_coor p1, t_coor p2, int lenX, int lenY, int color)
 
 
 //check if coordinates negative
-void		draw_line(t_coor p1, t_coor p2, int color)
+void		draw_line(t_coor p1, t_coor p2, int color, t_conf conf)
 {
 	int		lenX;
 	int		lenY;
@@ -78,7 +78,7 @@ void		draw_line(t_coor p1, t_coor p2, int color)
 	lenX = abs(p1.x - p2.x);
 	lenY = abs(p1.y - p2.y);
 	if (lenX > lenY)
-		draw_horizontal(p1, p2, lenX, lenY, color);
+		draw_horizontal(p1, p2, lenX, lenY, color, conf);
 	else
-		draw_vertical(p1, p2, lenX, lenY, color);
+		draw_vertical(p1, p2, lenX, lenY, color, conf);
 }
