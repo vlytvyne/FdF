@@ -12,62 +12,64 @@
 
 #include "fdf.h"
 
-static void	draw_horizontal(t_point p1, t_point p2, int lenX, int lenY, int color, t_conf conf)
+static void	draw_horizontal(t_point start, t_point end, int lenX, int lenY, t_conf conf)
 {
 	int		x;
 	int		i;
 	double	y;
 	double	increment;
+	double	color_change;
 
 	i = 0;
 	if (lenX == 0)
 		increment = 0;
 	else
 		increment = (double)lenY / lenX;
-	x = fmin(p1.coor.x, p2.coor.x);
-	y = x == p1.coor.x ? p1.coor.y : p2.coor.y;
-	if (y == p1.coor.y && y > p2.coor.y)
-		increment = -increment;
-	else if (y == p2.coor.y && y > p1.coor.y)
-		increment = -increment;
+	x = start.coor.x;
+	y = start.coor.y;
+	increment = y > end.coor.y ? -increment : increment;
+	if (start.color > end.color)
+		color_change = -(double)(start.color - end.color) / lenX;
+	else
+		color_change = (double)(end.color - start.color) / lenX;
 	while (i <= lenX)
 	{
-		mlx_pixel_put(conf.conn, conf.win, x, round(y), color);
+		mlx_pixel_put(conf.conn, conf.win, x, round(y), round(start.color + (color_change * i)));
 		x++;
 		y += increment;
 		i++;
 	}
 }
 
-static void	draw_vertical(t_point p1, t_point p2, int lenX, int lenY, int color, t_conf conf)
+static void	draw_vertical(t_point start, t_point end, int lenX, int lenY, t_conf conf)
 {
 	int		y;
 	int		i;
 	double	x;
 	double	increment;
+	double	color_change;
 
 	i = 0;
 	if (lenY == 0)
 		increment = 0;
 	else
 		increment = (double)lenX / lenY;
-	y = fmin(p1.coor.y, p2.coor.y);
-	x = y == p1.coor.y ? p1.coor.x : p2.coor.x;
-	if (x == p1.coor.x && x > p2.coor.x)
-		increment = -increment;
-	else if (x == p2.coor.x && x > p1.coor.x)
-		increment = -increment;
+	y = start.coor.y;
+	x = end.coor.x;
+	increment = x > end.coor.x ? -increment : increment;
+	if (start.color > end.color)
+		color_change = -(double)(start.color - end.color) / lenY;
+	else
+		color_change = (double)(end.color - start.color) / lenY;
 	while (i <= lenY)
 	{
-		mlx_pixel_put(conf.conn, conf.win, round(x), y, color);
+		mlx_pixel_put(conf.conn, conf.win, round(x), y, round(start.color + (color_change * i)));
 		y++;
 		x += increment;
 		i++;
 	}
 }
 
-
-//check if coordinates negative
 void		draw_line(t_point p1, t_point p2, int color, t_conf conf)
 {
 	int		lenX;
@@ -78,7 +80,18 @@ void		draw_line(t_point p1, t_point p2, int color, t_conf conf)
 	lenX = abs(p1.coor.x - p2.coor.x);
 	lenY = abs(p1.coor.y - p2.coor.y);
 	if (lenX > lenY)
-		draw_horizontal(p1, p2, lenX, lenY, color, conf);
+	{
+		if (p1.coor.x < p2.coor.x)
+			draw_horizontal(p1, p2, lenX, lenY, conf);
+		else
+			draw_horizontal(p2, p1, lenX, lenY, conf);
+	}
 	else
-		draw_vertical(p1, p2, lenX, lenY, color, conf);
+	{
+		if (p1.coor.y < p2.coor.y)
+			draw_vertical(p1, p2, lenX, lenY, conf);
+		else
+			draw_vertical(p2, p1, lenX, lenY, conf);
+
+	}
 }
