@@ -100,7 +100,7 @@ t_conf	init_conf(int fd)
 	t_point	**map;
 
 	conf.conn = mlx_init();
-	conf.win = mlx_new_window(conf.conn, 1000, 800, "FDF");
+	conf.win = mlx_new_window(conf.conn, 2000, 2000, "FDF");
 	lines = get_lines(fd, &conf.map_height);
 	conf.map_width = count_map_width(lines);
 	conf.map = extract_map(lines, conf);

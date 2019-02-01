@@ -55,7 +55,7 @@ static void	draw_vertical(t_point start, t_point end, int lenX, int lenY, t_conf
 	else
 		increment = (double)lenX / lenY;
 	y = start.coor.y;
-	x = end.coor.x;
+	x = start.coor.x;
 	increment = x > end.coor.x ? -increment : increment;
 	if (start.color > end.color)
 		color_change = -(double)(start.color - end.color) / lenY;
@@ -70,13 +70,13 @@ static void	draw_vertical(t_point start, t_point end, int lenX, int lenY, t_conf
 	}
 }
 
-void		draw_line(t_point p1, t_point p2, int color, t_conf conf)
+void		draw_line(t_point p1, t_point p2, t_conf conf)
 {
 	int		lenX;
 	int		lenY;
 
-	if (p1.coor.x < 0 || p1.coor.y < 0 || p2.coor.x < 0 || p2.coor.y < 0)
-		error_exit("negative coordinates");
+//	if (p1.coor.x < 0 || p1.coor.y < 0 || p2.coor.x < 0 || p2.coor.y < 0)
+//		error_exit("negative coordinates");
 	lenX = abs(p1.coor.x - p2.coor.x);
 	lenY = abs(p1.coor.y - p2.coor.y);
 	if (lenX > lenY)
