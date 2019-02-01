@@ -7,9 +7,27 @@ CMakeFiles/fdf.dir/draw_line.c.o: ../includes/libft.h
 CMakeFiles/fdf.dir/draw_line.c.o: ../includes/mlx.h
 CMakeFiles/fdf.dir/draw_line.c.o: ../draw_line.c
 
+CMakeFiles/fdf.dir/draw_map.c.o: ../includes/fdf.h
+CMakeFiles/fdf.dir/draw_map.c.o: ../includes/get_next_line.h
+CMakeFiles/fdf.dir/draw_map.c.o: ../includes/libft.h
+CMakeFiles/fdf.dir/draw_map.c.o: ../includes/mlx.h
+CMakeFiles/fdf.dir/draw_map.c.o: ../draw_map.c
+
+CMakeFiles/fdf.dir/init_config.c.o: ../includes/fdf.h
+CMakeFiles/fdf.dir/init_config.c.o: ../includes/get_next_line.h
+CMakeFiles/fdf.dir/init_config.c.o: ../includes/libft.h
+CMakeFiles/fdf.dir/init_config.c.o: ../includes/mlx.h
+CMakeFiles/fdf.dir/init_config.c.o: ../init_config.c
+
 CMakeFiles/fdf.dir/main.c.o: ../includes/fdf.h
 CMakeFiles/fdf.dir/main.c.o: ../includes/get_next_line.h
 CMakeFiles/fdf.dir/main.c.o: ../includes/libft.h
 CMakeFiles/fdf.dir/main.c.o: ../includes/mlx.h
 CMakeFiles/fdf.dir/main.c.o: ../main.c
+
+CMakeFiles/fdf.dir/utils.c.o: ../includes/fdf.h
+CMakeFiles/fdf.dir/utils.c.o: ../includes/get_next_line.h
+CMakeFiles/fdf.dir/utils.c.o: ../includes/libft.h
+CMakeFiles/fdf.dir/utils.c.o: ../includes/mlx.h
+CMakeFiles/fdf.dir/utils.c.o: ../utils.c
 

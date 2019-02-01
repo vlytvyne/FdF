@@ -11,8 +11,3 @@
 /* ************************************************************************** */
 
 #include "fdf.h"
-
-void	del(void *pointer, size_t size)
-{
-	free(pointer);
-}

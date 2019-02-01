@@ -87,7 +87,16 @@
 		<Unit filename="/Users/vlytvyne/Desktop/fdf/draw_line.c">
 			<Option target="fdf"/>
 		</Unit>
+		<Unit filename="/Users/vlytvyne/Desktop/fdf/draw_map.c">
+			<Option target="fdf"/>
+		</Unit>
+		<Unit filename="/Users/vlytvyne/Desktop/fdf/init_config.c">
+			<Option target="fdf"/>
+		</Unit>
 		<Unit filename="/Users/vlytvyne/Desktop/fdf/main.c">
+			<Option target="fdf"/>
+		</Unit>
+		<Unit filename="/Users/vlytvyne/Desktop/fdf/utils.c">
 			<Option target="fdf"/>
 		</Unit>
 		<Unit filename="/Users/vlytvyne/Desktop/fdf/CMakeLists.txt">

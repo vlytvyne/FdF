@@ -83,20 +83,65 @@ CMakeFiles/fdf.dir/draw_line.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/fdf.dir/draw_line.c.s"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/vlytvyne/Desktop/fdf/draw_line.c -o CMakeFiles/fdf.dir/draw_line.c.s
 
+CMakeFiles/fdf.dir/utils.c.o: CMakeFiles/fdf.dir/flags.make
+CMakeFiles/fdf.dir/utils.c.o: ../utils.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/vlytvyne/Desktop/fdf/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object CMakeFiles/fdf.dir/utils.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/fdf.dir/utils.c.o   -c /Users/vlytvyne/Desktop/fdf/utils.c
+
+CMakeFiles/fdf.dir/utils.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/fdf.dir/utils.c.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/vlytvyne/Desktop/fdf/utils.c > CMakeFiles/fdf.dir/utils.c.i
+
+CMakeFiles/fdf.dir/utils.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/fdf.dir/utils.c.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/vlytvyne/Desktop/fdf/utils.c -o CMakeFiles/fdf.dir/utils.c.s
+
+CMakeFiles/fdf.dir/init_config.c.o: CMakeFiles/fdf.dir/flags.make
+CMakeFiles/fdf.dir/init_config.c.o: ../init_config.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/vlytvyne/Desktop/fdf/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building C object CMakeFiles/fdf.dir/init_config.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/fdf.dir/init_config.c.o   -c /Users/vlytvyne/Desktop/fdf/init_config.c
+
+CMakeFiles/fdf.dir/init_config.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/fdf.dir/init_config.c.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/vlytvyne/Desktop/fdf/init_config.c > CMakeFiles/fdf.dir/init_config.c.i
+
+CMakeFiles/fdf.dir/init_config.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/fdf.dir/init_config.c.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/vlytvyne/Desktop/fdf/init_config.c -o CMakeFiles/fdf.dir/init_config.c.s
+
+CMakeFiles/fdf.dir/draw_map.c.o: CMakeFiles/fdf.dir/flags.make
+CMakeFiles/fdf.dir/draw_map.c.o: ../draw_map.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/vlytvyne/Desktop/fdf/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building C object CMakeFiles/fdf.dir/draw_map.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/fdf.dir/draw_map.c.o   -c /Users/vlytvyne/Desktop/fdf/draw_map.c
+
+CMakeFiles/fdf.dir/draw_map.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/fdf.dir/draw_map.c.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/vlytvyne/Desktop/fdf/draw_map.c > CMakeFiles/fdf.dir/draw_map.c.i
+
+CMakeFiles/fdf.dir/draw_map.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/fdf.dir/draw_map.c.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/vlytvyne/Desktop/fdf/draw_map.c -o CMakeFiles/fdf.dir/draw_map.c.s
+
 # Object files for target fdf
 fdf_OBJECTS = \
 "CMakeFiles/fdf.dir/main.c.o" \
-"CMakeFiles/fdf.dir/draw_line.c.o"
+"CMakeFiles/fdf.dir/draw_line.c.o" \
+"CMakeFiles/fdf.dir/utils.c.o" \
+"CMakeFiles/fdf.dir/init_config.c.o" \
+"CMakeFiles/fdf.dir/draw_map.c.o"
 
 # External object files for target fdf
 fdf_EXTERNAL_OBJECTS =
 
 fdf: CMakeFiles/fdf.dir/main.c.o
 fdf: CMakeFiles/fdf.dir/draw_line.c.o
+fdf: CMakeFiles/fdf.dir/utils.c.o
+fdf: CMakeFiles/fdf.dir/init_config.c.o
+fdf: CMakeFiles/fdf.dir/draw_map.c.o
 fdf: CMakeFiles/fdf.dir/build.make
 fdf: ../libft.a
 fdf: CMakeFiles/fdf.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/vlytvyne/Desktop/fdf/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking C executable fdf"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/vlytvyne/Desktop/fdf/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Linking C executable fdf"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/fdf.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

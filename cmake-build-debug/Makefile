@@ -150,6 +150,60 @@ draw_line.c.s:
 	$(MAKE) -f CMakeFiles/fdf.dir/build.make CMakeFiles/fdf.dir/draw_line.c.s
 .PHONY : draw_line.c.s
 
+draw_map.o: draw_map.c.o
+
+.PHONY : draw_map.o
+
+# target to build an object file
+draw_map.c.o:
+	$(MAKE) -f CMakeFiles/fdf.dir/build.make CMakeFiles/fdf.dir/draw_map.c.o
+.PHONY : draw_map.c.o
+
+draw_map.i: draw_map.c.i
+
+.PHONY : draw_map.i
+
+# target to preprocess a source file
+draw_map.c.i:
+	$(MAKE) -f CMakeFiles/fdf.dir/build.make CMakeFiles/fdf.dir/draw_map.c.i
+.PHONY : draw_map.c.i
+
+draw_map.s: draw_map.c.s
+
+.PHONY : draw_map.s
+
+# target to generate assembly for a file
+draw_map.c.s:
+	$(MAKE) -f CMakeFiles/fdf.dir/build.make CMakeFiles/fdf.dir/draw_map.c.s
+.PHONY : draw_map.c.s
+
+init_config.o: init_config.c.o
+
+.PHONY : init_config.o
+
+# target to build an object file
+init_config.c.o:
+	$(MAKE) -f CMakeFiles/fdf.dir/build.make CMakeFiles/fdf.dir/init_config.c.o
+.PHONY : init_config.c.o
+
+init_config.i: init_config.c.i
+
+.PHONY : init_config.i
+
+# target to preprocess a source file
+init_config.c.i:
+	$(MAKE) -f CMakeFiles/fdf.dir/build.make CMakeFiles/fdf.dir/init_config.c.i
+.PHONY : init_config.c.i
+
+init_config.s: init_config.c.s
+
+.PHONY : init_config.s
+
+# target to generate assembly for a file
+init_config.c.s:
+	$(MAKE) -f CMakeFiles/fdf.dir/build.make CMakeFiles/fdf.dir/init_config.c.s
+.PHONY : init_config.c.s
+
 main.o: main.c.o
 
 .PHONY : main.o
@@ -177,6 +231,33 @@ main.c.s:
 	$(MAKE) -f CMakeFiles/fdf.dir/build.make CMakeFiles/fdf.dir/main.c.s
 .PHONY : main.c.s
 
+utils.o: utils.c.o
+
+.PHONY : utils.o
+
+# target to build an object file
+utils.c.o:
+	$(MAKE) -f CMakeFiles/fdf.dir/build.make CMakeFiles/fdf.dir/utils.c.o
+.PHONY : utils.c.o
+
+utils.i: utils.c.i
+
+.PHONY : utils.i
+
+# target to preprocess a source file
+utils.c.i:
+	$(MAKE) -f CMakeFiles/fdf.dir/build.make CMakeFiles/fdf.dir/utils.c.i
+.PHONY : utils.c.i
+
+utils.s: utils.c.s
+
+.PHONY : utils.s
+
+# target to generate assembly for a file
+utils.c.s:
+	$(MAKE) -f CMakeFiles/fdf.dir/build.make CMakeFiles/fdf.dir/utils.c.s
+.PHONY : utils.c.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -189,9 +270,18 @@ help:
 	@echo "... draw_line.o"
 	@echo "... draw_line.i"
 	@echo "... draw_line.s"
+	@echo "... draw_map.o"
+	@echo "... draw_map.i"
+	@echo "... draw_map.s"
+	@echo "... init_config.o"
+	@echo "... init_config.i"
+	@echo "... init_config.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
+	@echo "... utils.o"
+	@echo "... utils.i"
+	@echo "... utils.s"
 .PHONY : help
 
 

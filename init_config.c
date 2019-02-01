@@ -49,7 +49,7 @@ static t_point	init_point(int x, int y, char *z_token)
 	p.coor.x = x;
 	p.coor.y = y;
 	p.coor.z = ft_atoi(z_token);
-	p.color = (color = ft_strchr(z_token, ',')) ? atoi_hex(color + 1) : 0;
+	p.color = (color = ft_strchr(z_token, ',')) ? atoi_hex(color + 1) : 0xFFFFFF;
 	return (p);
 }
 
@@ -104,6 +104,6 @@ t_conf	init_conf(int fd)
 	lines = get_lines(fd, &conf.map_height);
 	conf.map_width = count_map_width(lines);
 	conf.map = extract_map(lines, conf);
-	ft_lstdel(&lines, del);
+	lstdel_std(lines);
 	return (conf);
 }

@@ -19,6 +19,8 @@
 #  include <stdio.h>
 # include <math.h>
 
+# define LINE_LEN 10
+
 typedef struct	s_point
 {
 	t_coor		coor;
@@ -35,8 +37,9 @@ typedef	struct	s_conf
 }				t_conf;
 
 
-void		draw_line(t_coor p1, t_coor p2, int color, t_conf conf);
+void		draw_line(t_point p1, t_point p2, int color, t_conf conf);
 t_conf		init_conf(int fd);
 void		del(void *pointer, size_t size);
+void		draw_map(t_conf conf);
 
 #endif

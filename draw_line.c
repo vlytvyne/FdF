@@ -12,7 +12,7 @@
 
 #include "fdf.h"
 
-static void	draw_horizontal(t_coor p1, t_coor p2, int lenX, int lenY, int color, t_conf conf)
+static void	draw_horizontal(t_point p1, t_point p2, int lenX, int lenY, int color, t_conf conf)
 {
 	int		x;
 	int		i;
@@ -24,11 +24,11 @@ static void	draw_horizontal(t_coor p1, t_coor p2, int lenX, int lenY, int color,
 		increment = 0;
 	else
 		increment = (double)lenY / lenX;
-	x = p1.x < p2.x ? p1.x : p2.x;
-	y = x == p1.x ? p1.y : p2.y;
-	if (y == p1.y && y > p2.y)
+	x = fmin(p1.coor.x, p2.coor.x);
+	y = x == p1.coor.x ? p1.coor.y : p2.coor.y;
+	if (y == p1.coor.y && y > p2.coor.y)
 		increment = -increment;
-	else if (y == p2.y && y > p1.y)
+	else if (y == p2.coor.y && y > p1.coor.y)
 		increment = -increment;
 	while (i <= lenX)
 	{
@@ -39,7 +39,7 @@ static void	draw_horizontal(t_coor p1, t_coor p2, int lenX, int lenY, int color,
 	}
 }
 
-static void	draw_vertical(t_coor p1, t_coor p2, int lenX, int lenY, int color, t_conf conf)
+static void	draw_vertical(t_point p1, t_point p2, int lenX, int lenY, int color, t_conf conf)
 {
 	int		y;
 	int		i;
@@ -51,11 +51,11 @@ static void	draw_vertical(t_coor p1, t_coor p2, int lenX, int lenY, int color, t
 		increment = 0;
 	else
 		increment = (double)lenX / lenY;
-	y = p1.y < p2.y ? p1.y : p2.y;
-	x = y == p1.y ? p1.x : p2.x;
-	if (x == p1.x && x > p2.x)
+	y = fmin(p1.coor.y, p2.coor.y);
+	x = y == p1.coor.y ? p1.coor.x : p2.coor.x;
+	if (x == p1.coor.x && x > p2.coor.x)
 		increment = -increment;
-	else if (x == p2.x && x > p1.x)
+	else if (x == p2.coor.x && x > p1.coor.x)
 		increment = -increment;
 	while (i <= lenY)
 	{
@@ -68,15 +68,15 @@ static void	draw_vertical(t_coor p1, t_coor p2, int lenX, int lenY, int color, t
 
 
 //check if coordinates negative
-void		draw_line(t_coor p1, t_coor p2, int color, t_conf conf)
+void		draw_line(t_point p1, t_point p2, int color, t_conf conf)
 {
 	int		lenX;
 	int		lenY;
 
-	if (p1.x < 0 || p1.y < 0 || p2.x < 0 || p2.y < 0)
+	if (p1.coor.x < 0 || p1.coor.y < 0 || p2.coor.x < 0 || p2.coor.y < 0)
 		error_exit("negative coordinates");
-	lenX = abs(p1.x - p2.x);
-	lenY = abs(p1.y - p2.y);
+	lenX = abs(p1.coor.x - p2.coor.x);
+	lenY = abs(p1.coor.y - p2.coor.y);
 	if (lenX > lenY)
 		draw_horizontal(p1, p2, lenX, lenY, color, conf);
 	else
