@@ -38,11 +38,6 @@ int		key_hook(int keycode,void *param)
 	return (0);
 }
 
-int 	go_close(void *param)
-{
-	exit(0);
-}
-
 int		main(int argc, char **argv)
 {
 	int 	fd;
@@ -56,19 +51,12 @@ int		main(int argc, char **argv)
 //	t_point p1;
 //	p1.coor.x = 0;
 //	p1.coor.y = SCREEN_HEIGHT - 100;
-//	p1.color = 0xFF0000;
+//	p1.color = 0xFFAA20;
 //	t_point p2;
 //	p2.coor.x = SCREEN_WIDTH;
 //	p2.coor.y = SCREEN_HEIGHT - 100;
-//	p2.color = 0xFFFFFF;
+//	p2.color = 0x00F001;
 //	draw_line(p2, p1, conf);
-
-//	for(int i = 0; i < conf.map_height; i++)
-//	{
-//		for(int j = 0; j < conf.map_width; j++)
-//			fprintf(stderr, "%i ", conf.map[i][j].coor.y);
-//		fprintf(stderr, "\n");
-//	}
 
 	mlx_key_hook(conf.win, key_hook, NULL);
 	mlx_hook(conf.win, RED_CROSS, INT_MIN, go_close, NULL);

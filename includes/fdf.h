@@ -25,25 +25,43 @@
 # define ESC 53
 # define RED_CROSS 17
 
-typedef struct	s_point
-{
-	t_coor		coor;
-	int 		color;
-}				t_point;
+# define FLAT 0
+# define ISO 1
 
-typedef	struct	s_conf
+typedef struct		s_point
 {
-	void	*conn;
-	void	*win;
-	int 	map_height;
-	int 	map_width;
-	t_point	**map;
-}				t_conf;
+	t_coor			coor;
+	int 			color;
+}					t_point;
+
+typedef	struct		s_rgb
+{
+	double 			red;
+	double 			green;
+	double 			blue;
+}					t_rgb;
+
+typedef	struct		s_conf
+{
+	void			*conn;
+	void			*win;
+	int 			map_height;
+	int 			map_width;
+	t_point			**map_orig;
+	t_point			**map_flat;
+	int 			line_len_flat;
+	t_point			**map_iso;
+	int 			line_len_iso;
+	int 			state;
+}					t_conf;
 
 
 void		draw_line(t_point p1, t_point p2, t_conf conf);
 t_conf		init_conf(int fd);
-void		del(void *pointer, size_t size);
 void		draw_map(t_conf conf);
+int 		go_close(void *param);
+t_point		**copy_map(t_conf conf);
+void		set_lines_len(t_conf conf, int len, int state);
+void		rotate_iso(t_conf conf, double angle);
 
 #endif

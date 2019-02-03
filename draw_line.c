@@ -12,13 +12,51 @@
 
 #include "fdf.h"
 
-static void	draw_horizontal(t_point start, t_point end, int lenX, int lenY, t_conf conf)
+static t_rgb	get_gradient(t_point start, t_point end, int len)
+{
+	t_rgb	chanels_start;
+	t_rgb	chanels_end;
+	t_rgb	change;
+
+	chanels_start.red = (start.color >> 16) & 0xFF;
+	chanels_start.green = (start.color >> 8) & 0xFF;
+	chanels_start.blue = start.color & 0xFF;
+
+	chanels_end.red = (end.color >> 16) & 0xFF;
+	chanels_end.green = (end.color >> 8) & 0xFF;
+	chanels_end.blue = end.color & 0xFF;
+
+	change.red = -((chanels_start.red - chanels_end.red) / len);
+	change.green = -((chanels_start.green - chanels_end.green) / len);
+	change.blue = -((chanels_start.blue - chanels_end.blue) / len);
+	return (change);
+}
+
+static int		get_color(int start_color, t_rgb change, int pixel)
+{
+	int 	color;
+
+	color = 0;
+	change.red *= pixel;
+	change.green *= pixel;
+	change.blue *= pixel;
+	color = ((start_color >> 16) & 0xFF) + round(change.red);
+	color = color << 8;
+	color += ((start_color >> 8) & 0xFF) + round(change.green);
+	color = color << 8;
+	color += (start_color & 0xFF) + round(change.blue);
+	if (color < 0)
+		color = 0;
+	return (color);
+}
+
+static void		draw_horizontal(t_point start, t_point end, int lenX, int lenY, t_conf conf)
 {
 	int		x;
 	int		i;
 	double	y;
 	double	increment;
-	double	color_change;
+	t_rgb	color_change;
 
 	i = 0;
 	if (lenX == 0)
@@ -28,26 +66,23 @@ static void	draw_horizontal(t_point start, t_point end, int lenX, int lenY, t_co
 	x = start.coor.x;
 	y = start.coor.y;
 	increment = y > end.coor.y ? -increment : increment;
-	if (start.color > end.color)
-		color_change = -(double)(start.color - end.color) / lenX;
-	else
-		color_change = (double)(end.color - start.color) / lenX;
+	color_change = get_gradient(start, end, lenX);
 	while (i <= lenX)
 	{
-		mlx_pixel_put(conf.conn, conf.win, x, round(y), round(start.color + (color_change * i)));
+		mlx_pixel_put(conf.conn, conf.win, x, round(y), get_color(start.color, color_change, i));
 		x++;
 		y += increment;
 		i++;
 	}
 }
 
-static void	draw_vertical(t_point start, t_point end, int lenX, int lenY, t_conf conf)
+static void		draw_vertical(t_point start, t_point end, int lenX, int lenY, t_conf conf)
 {
 	int		y;
 	int		i;
 	double	x;
 	double	increment;
-	double	color_change;
+	t_rgb	color_change;
 
 	i = 0;
 	if (lenY == 0)
@@ -57,26 +92,21 @@ static void	draw_vertical(t_point start, t_point end, int lenX, int lenY, t_conf
 	y = start.coor.y;
 	x = start.coor.x;
 	increment = x > end.coor.x ? -increment : increment;
-	if (start.color > end.color)
-		color_change = -(double)(start.color - end.color) / lenY;
-	else
-		color_change = (double)(end.color - start.color) / lenY;
+	color_change = get_gradient(start, end, lenY);
 	while (i <= lenY)
 	{
-		mlx_pixel_put(conf.conn, conf.win, round(x), y, round(start.color + (color_change * i)));
+		mlx_pixel_put(conf.conn, conf.win, round(x), y, get_color(start.color, color_change, i));
 		y++;
 		x += increment;
 		i++;
 	}
 }
 
-void		draw_line(t_point p1, t_point p2, t_conf conf)
+void			draw_line(t_point p1, t_point p2, t_conf conf)
 {
 	int		lenX;
 	int		lenY;
 
-//	if (p1.coor.x < 0 || p1.coor.y < 0 || p2.coor.x < 0 || p2.coor.y < 0)
-//		error_exit("negative coordinates");
 	lenX = abs(p1.coor.x - p2.coor.x);
 	lenY = abs(p1.coor.y - p2.coor.y);
 	if (lenX > lenY)
