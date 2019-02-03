@@ -11,7 +11,7 @@
 # **************************************************************************** #
 
 all:
-	gcc *.c -g -lmlx libft.a -framework OpenGL -framework AppKit -I includes
+	gcc *.c -lmlx libft.a -framework OpenGL -framework AppKit -I includes
 
 clean:
 

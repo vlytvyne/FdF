@@ -19,7 +19,11 @@
 #  include <stdio.h>
 # include <math.h>
 
-# define LINE_LEN 10
+# define SCREEN_WIDTH 2560
+# define SCREEN_HEIGHT 1395
+
+# define ESC 53
+# define RED_CROSS 17
 
 typedef struct	s_point
 {

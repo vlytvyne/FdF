@@ -12,8 +12,7 @@
 
 #include "fdf.h"
 
-//TODO: ISO
-//TODO: ALTITUDE
+//TODO: BUTTONS
 
 void	set_lines_len(t_conf conf, int len)
 {
@@ -62,7 +61,7 @@ void	draw_map(t_conf conf)
 	int 	y;
 	int 	x;
 
-	set_lines_len(conf, 30);
+	set_lines_len(conf, 50);
 	iso(conf);
 	y = 0;
 	while (y < conf.map_height)
@@ -78,11 +77,4 @@ void	draw_map(t_conf conf)
 		}
 		y++;
 	}
-
-//	for(int i = 0; i < conf.map_height; i++)
-//	{
-//		for(int j = 0; j < conf.map_width; j++)
-//			fprintf(stderr, "%i ", conf.map[i][j].coor.y);
-//		fprintf(stderr, "\n");
-//	}
 }

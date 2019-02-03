@@ -28,6 +28,21 @@ int 	open_file(int argc, char **argv)
 	return (fd);
 }
 
+int		key_hook(int keycode,void *param)
+{
+	if (keycode == ESC)
+		exit(0);
+	if (keycode == 17)
+		exit(0);
+	fprintf(stderr, "%i", keycode);
+	return (0);
+}
+
+int 	go_close(void *param)
+{
+	exit(0);
+}
+
 int		main(int argc, char **argv)
 {
 	int 	fd;
@@ -38,16 +53,15 @@ int		main(int argc, char **argv)
 
 
 	draw_map(conf);
-	t_point p1;
-	p1.coor.x = 500;
-	p1.coor.y = 80;
-	t_point p2;
-	p2.coor.x = 474;
-	p2.coor.y = 95;
-	conf.map[3][3].color = 0xFF0000;
-	conf.map[3][4].color = 0xFF0000;
-	conf.map[3][2].color = 0xFF0000;
-
+//	t_point p1;
+//	p1.coor.x = 0;
+//	p1.coor.y = SCREEN_HEIGHT - 100;
+//	p1.color = 0xFF0000;
+//	t_point p2;
+//	p2.coor.x = SCREEN_WIDTH;
+//	p2.coor.y = SCREEN_HEIGHT - 100;
+//	p2.color = 0xFFFFFF;
+//	draw_line(p2, p1, conf);
 
 //	for(int i = 0; i < conf.map_height; i++)
 //	{
@@ -56,6 +70,8 @@ int		main(int argc, char **argv)
 //		fprintf(stderr, "\n");
 //	}
 
+	mlx_key_hook(conf.win, key_hook, NULL);
+	mlx_hook(conf.win, RED_CROSS, INT_MIN, go_close, NULL);
 	mlx_loop(conf.conn);
 	close(fd);
 }
