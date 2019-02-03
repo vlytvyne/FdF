@@ -50,8 +50,8 @@ typedef	struct		s_conf
 	t_point			**map_orig;
 	t_point			**map_flat;
 	int 			line_len_flat;
+	t_coor			padding;
 	t_point			**map_iso;
-	int 			line_len_iso;
 	int 			state;
 }					t_conf;
 

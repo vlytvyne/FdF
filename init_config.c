@@ -92,17 +92,47 @@ static int 	count_map_width(t_list *lines)
 	}
 	return (map_width);
 }
-
-int 	define_line_len(t_conf conf)
+void 	define_padding(t_conf *conf)
 {
-	int 	len;
 	int 	max_horizontal;
 	int 	max_vertical;
 
-	max_horizontal = (SCREEN_WIDTH * 0.9) / (conf.map_width - 1);
-	max_vertical = (SCREEN_HEIGHT * 0.9) / (conf.map_height - 1);
-	len = max_horizontal > max_vertical ? max_vertical : max_horizontal;
-	return (len);
+	max_horizontal = conf->map_width - 1 != 0 ? SCREEN_WIDTH / (conf->map_width - 1) : 50;
+	max_vertical = conf->map_height - 1 != 0 ? SCREEN_HEIGHT / (conf->map_height - 1) : 50;
+	if (max_horizontal > max_vertical)
+	{
+		conf->line_len_flat = max_vertical > 2 ? max_vertical - 1 : max_vertical;
+		conf->padding.x = (SCREEN_WIDTH - (conf->line_len_flat * (conf->map_width - 1))) / 2;
+		conf->padding.y = (SCREEN_HEIGHT - (conf->line_len_flat * (conf->map_height - 1))) / 2;
+	}
+	else
+	{
+		conf->line_len_flat = max_horizontal > 2 ? max_horizontal - 1 : max_horizontal;
+		conf->padding.x = (SCREEN_WIDTH - (conf->line_len_flat * (conf->map_width - 1))) / 2;
+		conf->padding.y = (SCREEN_HEIGHT - (conf->line_len_flat * (conf->map_height - 1))) / 2;
+	}
+}
+
+void	set_paddind(t_conf conf)
+{
+	int 	y;
+	int 	x;
+	t_point	**map;
+
+
+	map = conf.map_flat;
+	y = 0;
+	while (y < conf.map_height)
+	{
+		x = 0;
+		while (x < conf.map_width)
+		{
+			map[y][x].coor.x += conf.padding.x;
+			map[y][x].coor.y += conf.padding.y;
+			x++;
+		}
+		y++;
+	}
 }
 
 t_conf	init_conf(int fd)
@@ -115,11 +145,14 @@ t_conf	init_conf(int fd)
 	conf.win = mlx_new_window(conf.conn, SCREEN_WIDTH, SCREEN_HEIGHT, "FDF");
 	lines = get_lines(fd, &conf.map_height);
 	conf.map_width = count_map_width(lines);
+	if (conf.map_height == 1 && conf.map_width == 1)
+		error_exit("One point is not enough to build a map.");
 	conf.map_orig = extract_map(lines, conf);
 	conf.map_flat = copy_map(conf);
 	conf.map_iso = copy_map(conf);
-	conf.line_len_flat = define_line_len(conf);
+	define_padding(&conf);
 	set_lines_len(conf, conf.line_len_flat, FLAT);
+	set_paddind(conf);
 	set_lines_len(conf, 50, ISO);
 	rotate_iso(conf, 30);
 	conf.state = FLAT;

@@ -36,15 +36,3 @@ errno.h
 fdf.h
 /Users/vlytvyne/Desktop/fdf/fdf.h
 
-/Users/vlytvyne/Desktop/fdf/main.c
-fcntl.h
--
-unistd.h
--
-fdf.h
-/Users/vlytvyne/Desktop/fdf/fdf.h
-
-/Users/vlytvyne/Desktop/fdf/utils.c
-fdf.h
-/Users/vlytvyne/Desktop/fdf/fdf.h
-
