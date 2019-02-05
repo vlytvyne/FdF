@@ -61,7 +61,7 @@ void	set_lines_len(t_conf conf, int len, int state)
 	}
 }
 
-void	rotate_iso(t_conf conf, double angle)
+void	rotate_iso(t_conf conf)
 {
 	int 	y;
 	int 	x;

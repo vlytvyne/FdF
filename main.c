@@ -18,13 +18,13 @@ int 	open_file(int argc, char **argv)
 {
 	int		fd;
 
-	if (argc != 2)
-		show_usage("./fdf <filename.fdf>");
+	if (argc < 2)
+		show_usage("./fdf <filename.fdf> [-height window height] [-width window width]");
 	fd = open(argv[1], O_RDONLY);
 	if (fd == -1)
-		show_usage("./fdf <filename.fdf>");
+		show_usage("./fdf <filename.fdf> [-height window height] [-width window width]");
 	if (ft_strstr(argv[1], ".fdf") == NULL)
-		show_usage("./fdf <filename.fdf>");
+		show_usage("./fdf <filename.fdf> [-height window height] [-width window width]");
 	return (fd);
 }
 
@@ -48,18 +48,18 @@ void	move_right(t_point **map, int x, int y)
 void	add_altitude(t_point **map, int x, int y)
 {
 	if (map[y][x].coor.z > 0)
-		map[y][x].coor.y -= 10;
+		map[y][x].coor.y -= 20;
 	else if (map[y][x].coor.z < 0)
-		map[y][x].coor.y += 10;
-};
+		map[y][x].coor.y += 20;
+}
 
 void	reduce_altitude(t_point **map, int x, int y)
 {
 	if (map[y][x].coor.z > 0)
-		map[y][x].coor.y += 10;
+		map[y][x].coor.y += 20;
 	else if (map[y][x].coor.z < 0)
-		map[y][x].coor.y -= 10;
-};
+		map[y][x].coor.y -= 20;
+}
 
 void	map_iterator(t_conf conf, t_point **map, void (*func) (t_point **, int, int))
 {
@@ -107,7 +107,9 @@ int		key_hook(int keycode,void *param)
 	}
 	if (keycode == 24)
 	{
-
+		conf->line_len += 100;
+		set_lines_len(*conf, conf->line_len, conf->state);
+		set_paddings(*conf);
 	}
 	mlx_clear_window(conf->conn, conf->win);
 	draw_map(*conf, conf->state);
@@ -121,7 +123,7 @@ int		main(int argc, char **argv)
 	t_conf	conf;
 
 	fd = open_file(argc, argv);
-	conf = init_conf(fd);
+	conf = init_conf(fd, argc, argv);
 	draw_map(conf, conf.state);
 	mlx_key_hook(conf.win, key_hook, &conf);
 	mlx_hook(conf.win, RED_CROSS, INT_MIN, go_close, NULL);

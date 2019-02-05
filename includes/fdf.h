@@ -19,8 +19,8 @@
 #  include <stdio.h>
 # include <math.h>
 
-# define SCREEN_WIDTH 2560
-# define SCREEN_HEIGHT 1395
+# define SCREEN_WIDTH_MAX 2560
+# define SCREEN_HEIGHT_MAX 1395
 
 # define ESC 53
 # define I 34
@@ -61,16 +61,18 @@ typedef	struct		s_conf
 	t_coor			padding_flat;
 	t_coor			padding_iso;
 	int 			state;
+	int 			window_height;
+	int 			window_width;
 }					t_conf;
 
 
 void		draw_line(t_point p1, t_point p2, t_conf conf);
-t_conf		init_conf(int fd);
+t_conf		init_conf(int fd, int argc, char **argv);
 void		draw_map(t_conf conf, int state);
 int 		go_close(void *param);
 t_point		**copy_map(t_conf conf);
 void		set_lines_len(t_conf conf, int len, int state);
-void		rotate_iso(t_conf conf, double angle);
+void		rotate_iso(t_conf conf);
 void 		define_len_padding_flat(t_conf *conf);
 void		define_padding_iso(t_conf *conf);
 void		set_paddings(t_conf conf);

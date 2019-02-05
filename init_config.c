@@ -93,25 +93,47 @@ static int 	count_map_width(t_list *lines)
 	return (map_width);
 }
 
-t_conf	init_conf(int fd)
+void	set_window_size(t_conf *conf, int argc, char **argv)
+{
+	int i = 2;
+	conf->window_height = SCREEN_HEIGHT_MAX;
+	conf->window_width = SCREEN_WIDTH_MAX;
+	while (i < argc)
+	{
+		if (ft_strequ(argv[i], "-height") && i + 1 < argc)
+			conf->window_height = ft_atoi(argv[++i]);
+		if (ft_strequ(argv[i], "-width") && i + 1 < argc)
+			conf->window_width = ft_atoi(argv[++i]);
+		i++;
+	}
+	if (conf->window_height < 1 || conf->window_height > SCREEN_HEIGHT_MAX)
+		conf->window_height = SCREEN_HEIGHT_MAX;
+	if (conf->window_width < 1 || conf->window_width > SCREEN_WIDTH_MAX)
+		conf->window_width = SCREEN_WIDTH_MAX;
+}
+
+t_conf	init_conf(int fd, int argc, char **argv)
 {
 	t_conf	conf;
 	t_list	*lines;
 	t_point	**map;
 
+	set_window_size(&conf, argc, argv);
 	conf.conn = mlx_init();
-	conf.win = mlx_new_window(conf.conn, SCREEN_WIDTH, SCREEN_HEIGHT, "FDF");
+	conf.win = mlx_new_window(conf.conn, conf.window_width, conf.window_height, "FDF");
 	lines = get_lines(fd, &conf.map_height);
 	conf.map_width = count_map_width(lines);
 	if (conf.map_height == 1 && conf.map_width == 1)
 		error_exit("One point is not enough to build a map.");
+	if (conf.map_height == 1 || conf.map_width == 1)
+		error_exit("One line is not enough to build a map.");
 	conf.map_orig = extract_map(lines, conf);
 	conf.map_flat = copy_map(conf);
 	conf.map_iso = copy_map(conf);
 	define_len_padding_flat(&conf);
 	set_lines_len(conf, conf.line_len, FLAT);
 	set_lines_len(conf, conf.line_len, ISO);
-	rotate_iso(conf, 30);
+	rotate_iso(conf);
 	define_padding_iso(&conf);
 	set_paddings(conf);
 	conf.state = FLAT;
