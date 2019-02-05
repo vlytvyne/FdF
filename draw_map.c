@@ -12,13 +12,13 @@
 
 #include "fdf.h"
 
-void	draw_map(t_conf conf)
+void	draw_map(t_conf conf, int state)
 {
 	int 	y;
 	int 	x;
 	t_point	**map;
 
-	if (conf.state == ISO)
+	if (state == ISO)
 		map = conf.map_iso;
 	else
 		map = conf.map_flat;

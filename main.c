@@ -30,10 +30,27 @@ int 	open_file(int argc, char **argv)
 
 int		key_hook(int keycode,void *param)
 {
+	t_conf	*conf = ((t_conf *)param);
+
 	if (keycode == ESC)
 		exit(0);
-	if (keycode == 17)
-		exit(0);
+	if (keycode == I)
+	{
+		conf->state = conf->state == ISO ? FLAT : ISO;
+		mlx_clear_window(conf->conn, conf->win);
+		draw_map(*conf, conf->state);
+	}
+//	if (keycode == UP)
+//	{
+//		int y = 0;
+//		while (y < conf->map_height) {
+//			int x = 0;
+//			while (x < conf->map_width)
+//				conf->map_orig[y][x].coor.z = conf->map_orig[y][x++].coor.z * 2;
+//			y++;
+//		}
+//		conf->map_iso = copy_map(*conf);
+//	}
 	fprintf(stderr, "%i", keycode);
 	return (0);
 }
@@ -45,20 +62,8 @@ int		main(int argc, char **argv)
 
 	fd = open_file(argc, argv);
 	conf = init_conf(fd);
-
-
-	draw_map(conf);
-//	t_point p1;
-//	p1.coor.x = 0;
-//	p1.coor.y = SCREEN_HEIGHT - 100;
-//	p1.color = 0xFFAA20;
-//	t_point p2;
-//	p2.coor.x = SCREEN_WIDTH;
-//	p2.coor.y = SCREEN_HEIGHT - 100;
-//	p2.color = 0x00F001;
-//	draw_line(p2, p1, conf);
-
-	mlx_key_hook(conf.win, key_hook, NULL);
+	draw_map(conf, conf.state);
+	mlx_key_hook(conf.win, key_hook, &conf);
 	mlx_hook(conf.win, RED_CROSS, INT_MIN, go_close, NULL);
 	mlx_loop(conf.conn);
 	close(fd);

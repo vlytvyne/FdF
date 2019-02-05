@@ -76,8 +76,8 @@ void	rotate_iso(t_conf conf, double angle)
 		{
 			prev_x = conf.map_iso[y][x].coor.x;
 			prev_y = conf.map_iso[y][x].coor.y;
-			conf.map_iso[y][x].coor.x = (prev_x - prev_y) * cos(0.523599) + 500;
-			conf.map_iso[y][x].coor.y = -conf.map_iso[y][x].coor.z + (prev_x + prev_y) * sin(0.523599);
+			conf.map_iso[y][x].coor.x = (prev_x - prev_y) * cos(0.523599);
+			conf.map_iso[y][x].coor.y = (prev_x + prev_y) * sin(0.523599) - conf.map_iso[y][x].coor.z;
 			x++;
 		}
 		y++;
