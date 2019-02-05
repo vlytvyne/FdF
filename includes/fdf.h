@@ -25,6 +25,11 @@
 # define ESC 53
 # define I 34
 # define UP 116
+# define DOWN 121
+# define ARROW_UP 126
+# define ARROW_DOWN 125
+# define ARROW_LEFT 123
+# define ARROW_RIGHT 124
 # define RED_CROSS 17
 
 # define FLAT 0
@@ -66,5 +71,8 @@ int 		go_close(void *param);
 t_point		**copy_map(t_conf conf);
 void		set_lines_len(t_conf conf, int len, int state);
 void		rotate_iso(t_conf conf, double angle);
+void 		define_len_padding_flat(t_conf *conf);
+void		define_padding_iso(t_conf *conf);
+void		set_paddings(t_conf conf);
 
 #endif
