@@ -20,20 +20,15 @@ static t_list	*get_lines(int fd, int *map_height)
 
 	*map_height = 0;
 	head = NULL;
-	while (get_next_line(fd, &s)) {
+	while (get_next_line(fd, &s))
+	{
+		list = malloc(sizeof(t_list));
+		list->content = s;
+		list->next = NULL;
 		if (head == NULL)
-		{
-			head = malloc(sizeof(t_list));
-			head->content = s;
-			head->next = NULL;
-		}
+			head = list;
 		else
-		{
-			list = malloc(sizeof(t_list));
-			list->content = s;
-			list->next = NULL;
 			lst_add_end(head, list);
-		}
 		(*map_height)++;
 	}
 	if (head == NULL)
@@ -44,12 +39,15 @@ static t_list	*get_lines(int fd, int *map_height)
 static t_point	init_point(int x, int y, char *z_token)
 {
 	t_point	p;
-	char 	*color;
+	char	*color;
 
 	p.coor.x = x;
 	p.coor.y = y;
 	p.coor.z = ft_atoi(z_token);
-	p.color = (color = ft_strchr(z_token, ',')) ? atoi_hex(color + 1) : 0xFFFFFF;
+	if ((color = ft_strchr(z_token, ',')))
+		p.color = atoi_hex(color + 1);
+	else
+		p.color = 0xFFFFFF;
 	return (p);
 }
 
@@ -57,8 +55,8 @@ static t_point	**extract_map(t_list *lines, t_conf conf)
 {
 	t_point	**map;
 	char	**tokens_z;
-	int 	y;
-	int 	x;
+	int		y;
+	int		x;
 
 	map = (t_point**)malloc(sizeof(t_point*) * conf.map_height);
 	y = 0;
@@ -80,9 +78,10 @@ static t_point	**extract_map(t_list *lines, t_conf conf)
 	return (map);
 }
 
-static int 	count_map_width(t_list *lines)
+static int	count_map_width(t_list *lines)
 {
 	int		map_width;
+
 	map_width = count_words((char*)lines->content, ' ');
 	while (lines)
 	{
@@ -95,32 +94,41 @@ static int 	count_map_width(t_list *lines)
 
 void	set_window_size(t_conf *conf, int argc, char **argv)
 {
-	int i = 2;
-	conf->window_height = SCREEN_HEIGHT_MAX;
-	conf->window_width = SCREEN_WIDTH_MAX;
+	int i;
+
+	i = 2;
+	conf->win_h = SCREEN_HEIGHT_MAX;
+	conf->win_w = SCREEN_WIDTH_MAX;
 	while (i < argc)
 	{
 		if (ft_strequ(argv[i], "-height") && i + 1 < argc)
-			conf->window_height = ft_atoi(argv[++i]);
+			conf->win_h = ft_atoi(argv[++i]);
 		if (ft_strequ(argv[i], "-width") && i + 1 < argc)
-			conf->window_width = ft_atoi(argv[++i]);
+			conf->win_w = ft_atoi(argv[++i]);
+		if (ft_strequ(argv[i], "-help"))
+			show_usage("./fdf <filename.fdf> [-height window height]"
+" [-width window width] [-help]\n\nIN PROGRAM CONTROLS:\n"
+"\t[+] - zoom in.\n"
+"\t[-] - zoom out.\n"
+"\t[PageUp] - add altitude.\n"
+"\t[PageDown] - reduce altitude.\n"
+"\t[Arrows] - move the map.\n");
 		i++;
 	}
-	if (conf->window_height < 1 || conf->window_height > SCREEN_HEIGHT_MAX)
-		conf->window_height = SCREEN_HEIGHT_MAX;
-	if (conf->window_width < 1 || conf->window_width > SCREEN_WIDTH_MAX)
-		conf->window_width = SCREEN_WIDTH_MAX;
+	if (conf->win_h < 1 || conf->win_h > SCREEN_HEIGHT_MAX)
+		conf->win_h = SCREEN_HEIGHT_MAX;
+	if (conf->win_w < 1 || conf->win_w > SCREEN_WIDTH_MAX)
+		conf->win_w = SCREEN_WIDTH_MAX;
 }
 
 t_conf	init_conf(int fd, int argc, char **argv)
 {
 	t_conf	conf;
 	t_list	*lines;
-	t_point	**map;
 
 	set_window_size(&conf, argc, argv);
 	conf.conn = mlx_init();
-	conf.win = mlx_new_window(conf.conn, conf.window_width, conf.window_height, "FDF");
+	conf.win = mlx_new_window(conf.conn, conf.win_w, conf.win_h, "FDF");
 	lines = get_lines(fd, &conf.map_height);
 	conf.map_width = count_map_width(lines);
 	if (conf.map_height == 1 && conf.map_width == 1)

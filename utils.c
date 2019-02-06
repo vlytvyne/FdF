@@ -12,7 +12,7 @@
 
 #include "fdf.h"
 
-int 	go_close(void *param)
+int		go_close(void *param)
 {
 	exit(0);
 }
@@ -20,7 +20,7 @@ int 	go_close(void *param)
 t_point	**copy_map(t_conf conf)
 {
 	t_point	**map_copy;
-	int 	y;
+	int		y;
 
 	map_copy = (t_point**)malloc(sizeof(t_point*) * conf.map_height);
 	ft_memcpy(map_copy, conf.map_orig, sizeof(t_point*) * conf.map_height);
@@ -28,7 +28,8 @@ t_point	**copy_map(t_conf conf)
 	while (y < conf.map_height)
 	{
 		map_copy[y] = (t_point*)malloc(sizeof(t_list) * conf.map_width);
-		ft_memcpy(map_copy[y], conf.map_orig[y], sizeof(t_list) * conf.map_width);
+		ft_memcpy(map_copy[y], conf.map_orig[y],
+				sizeof(t_list) * conf.map_width);
 		y++;
 	}
 	return (map_copy);
@@ -36,8 +37,8 @@ t_point	**copy_map(t_conf conf)
 
 void	set_lines_len(t_conf conf, int len, int state)
 {
-	int 	y;
-	int 	x;
+	int		y;
+	int		x;
 	t_point	**map;
 
 	if (state == ISO)
@@ -61,10 +62,10 @@ void	set_lines_len(t_conf conf, int len, int state)
 
 void	rotate_iso(t_conf conf)
 {
-	int 	y;
-	int 	x;
-	int 	prev_x;
-	int 	prev_y;
+	int		y;
+	int		x;
+	int		prev_x;
+	int		prev_y;
 
 	y = 0;
 	while (y < conf.map_height)
@@ -75,7 +76,8 @@ void	rotate_iso(t_conf conf)
 			prev_x = conf.map_iso[y][x].coor.x;
 			prev_y = conf.map_iso[y][x].coor.y;
 			conf.map_iso[y][x].coor.x = (prev_x - prev_y) * cos(0.523599);
-			conf.map_iso[y][x].coor.y = (prev_x + prev_y) * sin(0.523599) - conf.map_iso[y][x].coor.z;
+			conf.map_iso[y][x].coor.y = (prev_x + prev_y) * sin(0.523599)
+					- conf.map_iso[y][x].coor.z;
 			x++;
 		}
 		y++;

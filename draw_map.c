@@ -14,8 +14,8 @@
 
 void	draw_map(t_conf conf, int state)
 {
-	int 	y;
-	int 	x;
+	int		y;
+	int		x;
 	t_point	**map;
 
 	if (state == ISO)
