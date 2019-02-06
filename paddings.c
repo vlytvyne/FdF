@@ -88,8 +88,8 @@ void	change_padding(t_conf *conf, int state, int p_x, int p_y)
 
 void	set_paddings(t_conf conf, int state)
 {
-	int 	y;
-	int 	x;
+	int		y;
+	int		x;
 	t_point	**map;
 	t_coor	padd;
 

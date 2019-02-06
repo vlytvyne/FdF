@@ -14,7 +14,7 @@
 #include <unistd.h>
 #include "fdf.h"
 
-int		open_file(int argc, char **argv)
+static int	open_file(int argc, char **argv)
 {
 	int		fd;
 
@@ -40,102 +40,7 @@ int		open_file(int argc, char **argv)
 	return (fd);
 }
 
-void	add_altitude(t_point **map, int x, int y)
-{
-	if (map[y][x].coor.z > 0)
-		map[y][x].coor.y -= 20;
-	else if (map[y][x].coor.z < 0)
-		map[y][x].coor.y += 20;
-}
-
-void	reduce_altitude(t_point **map, int x, int y)
-{
-	if (map[y][x].coor.z > 0)
-		map[y][x].coor.y += 20;
-	else if (map[y][x].coor.z < 0)
-		map[y][x].coor.y -= 20;
-}
-
-void	map_iterator(t_conf conf, t_point **map,
-		void (*func) (t_point **, int, int))
-{
-	int y;
-	int x;
-
-	y = 0;
-	while (y < conf.map_height)
-	{
-		x = 0;
-		while (x < conf.map_width)
-		{
-			func(map, x, y);
-			x++;
-		}
-		y++;
-	}
-}
-
-void	move_map(int keycode, t_conf *conf)
-{
-	if (keycode == ARROW_UP)
-		change_padding(conf, conf->state, 0, -100);
-	else if (keycode == ARROW_DOWN)
-		change_padding(conf, conf->state, 0, 100);
-	else if (keycode == ARROW_LEFT)
-		change_padding(conf, conf->state, -100, 0);
-	else if (keycode == ARROW_RIGHT)
-		change_padding(conf, conf->state, 100, 0);
-}
-
-void	refresh_map(t_conf *conf)
-{
-	set_lines_len(*conf, conf->line_len, conf->state);
-	if (conf->state == ISO)
-		rotate_iso(*conf);
-	set_paddings(*conf, conf->state);
-}
-
-void	increase_size(t_conf *conf)
-{
-	conf->line_len += conf->line_len / 3 + 1;
-	refresh_map(conf);
-}
-
-void	decrease_size(t_conf *conf)
-{
-	conf->line_len -= conf->line_len / 3 + 1;
-	refresh_map(conf);
-}
-
-
-int		key_hook(int keycode, void *param)
-{
-	t_conf	*conf;
-
-	conf = ((t_conf *)param);
-	if (keycode == ESC)
-		exit(0);
-	if (keycode == I)
-	{
-		conf->state = conf->state == ISO ? FLAT : ISO;
-		refresh_map(conf);
-	}
-	if (keycode == UP && conf->state == ISO)
-		map_iterator(*conf, conf->map_iso, add_altitude);
-	if (keycode == DOWN && conf->state)
-		map_iterator(*conf, conf->map_iso, reduce_altitude);
-	if (keycode >= ARROW_LEFT && keycode <= ARROW_UP)
-		move_map(keycode, conf);
-	if (keycode == PLUS || keycode == PLUS_NUM)
-		increase_size(conf);
-	if ((keycode == MINUS || keycode == MINUS_NUM) && conf->line_len > 43)
-		decrease_size(conf);
-	mlx_clear_window(conf->conn, conf->win);
-	draw_map(*conf, conf->state);
-	return (0);
-}
-
-int		main(int argc, char **argv)
+int			main(int argc, char **argv)
 {
 	int		fd;
 	t_conf	conf;

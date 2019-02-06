@@ -78,7 +78,7 @@ static t_point	**extract_map(t_list *lines, t_conf conf)
 	return (map);
 }
 
-static int	count_map_width(t_list *lines)
+static int		count_map_width(t_list *lines)
 {
 	int		map_width;
 
@@ -92,36 +92,7 @@ static int	count_map_width(t_list *lines)
 	return (map_width);
 }
 
-void	set_window_size(t_conf *conf, int argc, char **argv)
-{
-	int i;
-
-	i = 2;
-	conf->win_h = SCREEN_HEIGHT_MAX;
-	conf->win_w = SCREEN_WIDTH_MAX;
-	while (i < argc)
-	{
-		if (ft_strequ(argv[i], "-height") && i + 1 < argc)
-			conf->win_h = ft_atoi(argv[++i]);
-		if (ft_strequ(argv[i], "-width") && i + 1 < argc)
-			conf->win_w = ft_atoi(argv[++i]);
-		if (ft_strequ(argv[i], "-help"))
-			show_usage("./fdf <filename.fdf> [-height window height]"
-" [-width window width] [-help]\n\nIN PROGRAM CONTROLS:\n"
-"\t[+] - zoom in.\n"
-"\t[-] - zoom out.\n"
-"\t[PageUp] - add altitude.\n"
-"\t[PageDown] - reduce altitude.\n"
-"\t[Arrows] - move the map.\n");
-		i++;
-	}
-	if (conf->win_h < 1 || conf->win_h > SCREEN_HEIGHT_MAX)
-		conf->win_h = SCREEN_HEIGHT_MAX;
-	if (conf->win_w < 1 || conf->win_w > SCREEN_WIDTH_MAX)
-		conf->win_w = SCREEN_WIDTH_MAX;
-}
-
-t_conf	init_conf(int fd, int argc, char **argv)
+t_conf			init_conf(int fd, int argc, char **argv)
 {
 	t_conf	conf;
 	t_list	*lines;

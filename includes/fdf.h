@@ -70,17 +70,23 @@ typedef	struct		s_conf
 }					t_conf;
 
 
-void		draw_line(t_point p1, t_point p2, t_conf conf);
-t_conf		init_conf(int fd, int argc, char **argv);
-void		draw_map(t_conf conf, int state);
-int 		go_close(void *param);
-t_point		**copy_map(t_conf conf);
-void		set_lines_len(t_conf conf, int len, int state);
-void		rotate_iso(t_conf conf);
-void 		define_len_padding_flat(t_conf *conf);
-void		define_padding_iso(t_conf *conf);
+void				draw_line(t_point p1, t_point p2, t_conf conf);
+t_conf				init_conf(int fd, int argc, char **argv);
+void				draw_map(t_conf conf, int state);
+int 				go_close(void *param);
+t_point				**copy_map(t_conf conf);
+void				set_lines_len(t_conf conf, int len, int state);
+void				rotate_iso(t_conf conf);
+void 				define_len_padding_flat(t_conf *conf);
+void				define_padding_iso(t_conf *conf);
 
-void	change_padding(t_conf *conf, int state, int p_x, int p_y);
-void	set_paddings(t_conf conf, int state);
+void				change_padding(t_conf *conf, int state, int p_x, int p_y);
+void				set_paddings(t_conf conf, int state);
+void				set_window_size(t_conf *conf, int argc, char **argv);
+void				add_altitude(t_point **map, int x, int y);
+void				reduce_altitude(t_point **map, int x, int y);
+void				map_iterator(t_conf conf, t_point **map,
+					void (*func) (t_point **, int, int));
+int					key_hook(int keycode, void *param);
 
 #endif

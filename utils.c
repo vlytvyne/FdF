@@ -60,6 +60,35 @@ void	set_lines_len(t_conf conf, int len, int state)
 	}
 }
 
+void	set_window_size(t_conf *conf, int argc, char **argv)
+{
+	int i;
+
+	i = 2;
+	conf->win_h = SCREEN_HEIGHT_MAX;
+	conf->win_w = SCREEN_WIDTH_MAX;
+	while (i < argc)
+	{
+		if (ft_strequ(argv[i], "-height") && i + 1 < argc)
+			conf->win_h = ft_atoi(argv[++i]);
+		if (ft_strequ(argv[i], "-width") && i + 1 < argc)
+			conf->win_w = ft_atoi(argv[++i]);
+		if (ft_strequ(argv[i], "-help"))
+			show_usage("./fdf <filename.fdf> [-height window height]"
+" [-width window width] [-help]\n\nIN PROGRAM CONTROLS:\n"
+"\t[+] - zoom in.\n"
+"\t[-] - zoom out.\n"
+"\t[PageUp] - add altitude.\n"
+"\t[PageDown] - reduce altitude.\n"
+"\t[Arrows] - move the map.\n");
+		i++;
+	}
+	if (conf->win_h < 1 || conf->win_h > SCREEN_HEIGHT_MAX)
+		conf->win_h = SCREEN_HEIGHT_MAX;
+	if (conf->win_w < 1 || conf->win_w > SCREEN_WIDTH_MAX)
+		conf->win_w = SCREEN_WIDTH_MAX;
+}
+
 void	rotate_iso(t_conf conf)
 {
 	int		y;

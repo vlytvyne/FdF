@@ -12,23 +12,6 @@
 
 #include "fdf.h"
 
-void	move_up(t_point **map, int x, int y)
-{
-	map[y][x].coor.y -= 50;
-}
-void	move_down(t_point **map, int x, int y)
-{
-	map[y][x].coor.y += 50;
-}
-void	move_left(t_point **map, int x, int y)
-{
-	map[y][x].coor.x -= 50;
-}
-void	move_right(t_point **map, int x, int y)
-{
-	map[y][x].coor.x += 50;
-}
-
 void	add_altitude(t_point **map, int x, int y)
 {
 	if (map[y][x].coor.z > 0)
@@ -45,15 +28,18 @@ void	reduce_altitude(t_point **map, int x, int y)
 		map[y][x].coor.y -= 20;
 }
 
-void	map_iterator(t_conf conf, t_point **map, void (*func) (t_point **, int, int))
+void	map_iterator(t_conf conf, t_point **map,
+		void (*func) (t_point **, int, int))
 {
 	int y;
 	int x;
 
 	y = 0;
-	while (y < conf.map_height) {
+	while (y < conf.map_height)
+	{
 		x = 0;
-		while (x < conf.map_width) {
+		while (x < conf.map_width)
+		{
 			func(map, x, y);
 			x++;
 		}
