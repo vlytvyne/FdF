@@ -231,6 +231,33 @@ main.c.s:
 	$(MAKE) -f CMakeFiles/fdf.dir/build.make CMakeFiles/fdf.dir/main.c.s
 .PHONY : main.c.s
 
+paddings.o: paddings.c.o
+
+.PHONY : paddings.o
+
+# target to build an object file
+paddings.c.o:
+	$(MAKE) -f CMakeFiles/fdf.dir/build.make CMakeFiles/fdf.dir/paddings.c.o
+.PHONY : paddings.c.o
+
+paddings.i: paddings.c.i
+
+.PHONY : paddings.i
+
+# target to preprocess a source file
+paddings.c.i:
+	$(MAKE) -f CMakeFiles/fdf.dir/build.make CMakeFiles/fdf.dir/paddings.c.i
+.PHONY : paddings.c.i
+
+paddings.s: paddings.c.s
+
+.PHONY : paddings.s
+
+# target to generate assembly for a file
+paddings.c.s:
+	$(MAKE) -f CMakeFiles/fdf.dir/build.make CMakeFiles/fdf.dir/paddings.c.s
+.PHONY : paddings.c.s
+
 utils.o: utils.c.o
 
 .PHONY : utils.o
@@ -279,6 +306,9 @@ help:
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
+	@echo "... paddings.o"
+	@echo "... paddings.i"
+	@echo "... paddings.s"
 	@echo "... utils.o"
 	@echo "... utils.i"
 	@echo "... utils.s"

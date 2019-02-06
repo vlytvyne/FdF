@@ -25,6 +25,12 @@ CMakeFiles/fdf.dir/main.c.o: ../includes/libft.h
 CMakeFiles/fdf.dir/main.c.o: ../includes/mlx.h
 CMakeFiles/fdf.dir/main.c.o: ../main.c
 
+CMakeFiles/fdf.dir/paddings.c.o: ../includes/fdf.h
+CMakeFiles/fdf.dir/paddings.c.o: ../includes/get_next_line.h
+CMakeFiles/fdf.dir/paddings.c.o: ../includes/libft.h
+CMakeFiles/fdf.dir/paddings.c.o: ../includes/mlx.h
+CMakeFiles/fdf.dir/paddings.c.o: ../paddings.c
+
 CMakeFiles/fdf.dir/utils.c.o: ../includes/fdf.h
 CMakeFiles/fdf.dir/utils.c.o: ../includes/get_next_line.h
 CMakeFiles/fdf.dir/utils.c.o: ../includes/libft.h

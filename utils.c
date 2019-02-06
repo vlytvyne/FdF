@@ -34,8 +34,6 @@ t_point	**copy_map(t_conf conf)
 	return (map_copy);
 }
 
-//TODO: set z coordinate properly
-
 void	set_lines_len(t_conf conf, int len, int state)
 {
 	int 	y;
@@ -52,9 +50,9 @@ void	set_lines_len(t_conf conf, int len, int state)
 		x = 0;
 		while (x < conf.map_width)
 		{
-			map[y][x].coor.x = conf.map_orig[y][x].coor.x  * len;
-			map[y][x].coor.y = conf.map_orig[y][x].coor.y  * len;
-			map[y][x].coor.z *= 10;
+			map[y][x].coor.x = conf.map_orig[y][x].coor.x * len;
+			map[y][x].coor.y = conf.map_orig[y][x].coor.y * len;
+			map[y][x].coor.z = conf.map_orig[y][x].coor.z * len / 10;
 			x++;
 		}
 		y++;

@@ -135,7 +135,8 @@ t_conf	init_conf(int fd, int argc, char **argv)
 	set_lines_len(conf, conf.line_len, ISO);
 	rotate_iso(conf);
 	define_padding_iso(&conf);
-	set_paddings(conf);
+	set_paddings(conf, ISO);
+	set_paddings(conf, FLAT);
 	conf.state = FLAT;
 	lstdel_std(lines);
 	return (conf);

@@ -92,24 +92,33 @@ int		key_hook(int keycode,void *param)
 		map_iterator(*conf, conf->map_iso, reduce_altitude);
 	if (keycode >= ARROW_LEFT && keycode <= ARROW_UP)
 	{
-		if (conf->state == ISO)
-			map = conf->map_iso;
-		else
-			map = conf->map_flat;
+		unset_paddings(*conf, conf->state);
+		t_coor *padd = conf->state == ISO ? &(conf->padding_iso) : &(conf->padding_flat);
 		if (keycode == ARROW_UP)
-			map_iterator(*conf, map, move_up);
+			padd->y -= 20;
 		else if (keycode == ARROW_DOWN)
-			map_iterator(*conf, map, move_down);
+			padd->y += 20;
 		else if (keycode == ARROW_LEFT)
-			map_iterator(*conf, map, move_left);
+			padd->x -= 20;
 		else if (keycode == ARROW_RIGHT)
-			map_iterator(*conf, map, move_right);
+			padd->x += 20;
+		set_paddings(*conf, conf->state);
 	}
-	if (keycode == 24)
+	if (keycode == PLUS)
 	{
-		conf->line_len += 100;
+		conf->line_len += 40;
 		set_lines_len(*conf, conf->line_len, conf->state);
-		set_paddings(*conf);
+		if (conf->state == ISO)
+			rotate_iso(*conf);
+		set_paddings(*conf, conf->state);
+	}
+	if (keycode == MINUS && conf->line_len > 43)
+	{
+		conf->line_len -= 40;
+		set_lines_len(*conf, conf->line_len, conf->state);
+		if (conf->state == ISO)
+			rotate_iso(*conf);
+		set_paddings(*conf, conf->state);
 	}
 	mlx_clear_window(conf->conn, conf->win);
 	draw_map(*conf, conf->state);

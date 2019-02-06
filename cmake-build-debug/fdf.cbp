@@ -96,6 +96,9 @@
 		<Unit filename="/Users/vlytvyne/Desktop/fdf/main.c">
 			<Option target="fdf"/>
 		</Unit>
+		<Unit filename="/Users/vlytvyne/Desktop/fdf/paddings.c">
+			<Option target="fdf"/>
+		</Unit>
 		<Unit filename="/Users/vlytvyne/Desktop/fdf/utils.c">
 			<Option target="fdf"/>
 		</Unit>

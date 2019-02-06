@@ -4,6 +4,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/fdf.dir/utils.c.o"
   "CMakeFiles/fdf.dir/init_config.c.o"
   "CMakeFiles/fdf.dir/draw_map.c.o"
+  "CMakeFiles/fdf.dir/paddings.c.o"
   "fdf.pdb"
   "fdf"
 )

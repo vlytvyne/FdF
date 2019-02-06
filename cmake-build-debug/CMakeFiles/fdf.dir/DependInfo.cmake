@@ -8,6 +8,7 @@ set(CMAKE_DEPENDS_CHECK_C
   "/Users/vlytvyne/Desktop/fdf/draw_map.c" "/Users/vlytvyne/Desktop/fdf/cmake-build-debug/CMakeFiles/fdf.dir/draw_map.c.o"
   "/Users/vlytvyne/Desktop/fdf/init_config.c" "/Users/vlytvyne/Desktop/fdf/cmake-build-debug/CMakeFiles/fdf.dir/init_config.c.o"
   "/Users/vlytvyne/Desktop/fdf/main.c" "/Users/vlytvyne/Desktop/fdf/cmake-build-debug/CMakeFiles/fdf.dir/main.c.o"
+  "/Users/vlytvyne/Desktop/fdf/paddings.c" "/Users/vlytvyne/Desktop/fdf/cmake-build-debug/CMakeFiles/fdf.dir/paddings.c.o"
   "/Users/vlytvyne/Desktop/fdf/utils.c" "/Users/vlytvyne/Desktop/fdf/cmake-build-debug/CMakeFiles/fdf.dir/utils.c.o"
   )
 set(CMAKE_C_COMPILER_ID "AppleClang")
