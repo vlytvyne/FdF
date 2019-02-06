@@ -77,49 +77,49 @@ void	map_iterator(t_conf conf, t_point **map,
 
 void	move_map(int keycode, t_conf *conf)
 {
-	t_coor *padd;
-
-	unset_paddings(*conf, conf->state);
-	padd = conf->state == ISO ? &(conf->padding_iso) : &(conf->padding_flat);
 	if (keycode == ARROW_UP)
-		padd->y -= 100;
+		change_padding(conf, conf->state, 0, -100);
 	else if (keycode == ARROW_DOWN)
-		padd->y += 100;
+		change_padding(conf, conf->state, 0, 100);
 	else if (keycode == ARROW_LEFT)
-		padd->x -= 100;
+		change_padding(conf, conf->state, -100, 0);
 	else if (keycode == ARROW_RIGHT)
-		padd->x += 100;
+		change_padding(conf, conf->state, 100, 0);
+}
+
+void	refresh_map(t_conf *conf)
+{
+	set_lines_len(*conf, conf->line_len, conf->state);
+	if (conf->state == ISO)
+		rotate_iso(*conf);
 	set_paddings(*conf, conf->state);
 }
 
 void	increase_size(t_conf *conf)
 {
-	conf->line_len += 40;
-	set_lines_len(*conf, conf->line_len, conf->state);
-	if (conf->state == ISO)
-		rotate_iso(*conf);
-	set_paddings(*conf, conf->state);
+	conf->line_len += conf->line_len / 3 + 1;
+	refresh_map(conf);
 }
 
 void	decrease_size(t_conf *conf)
 {
-	conf->line_len -= 40;
-	set_lines_len(*conf, conf->line_len, conf->state);
-	if (conf->state == ISO)
-		rotate_iso(*conf);
-	set_paddings(*conf, conf->state);
+	conf->line_len -= conf->line_len / 3 + 1;
+	refresh_map(conf);
 }
+
 
 int		key_hook(int keycode, void *param)
 {
 	t_conf	*conf;
-	t_point **map;
 
 	conf = ((t_conf *)param);
 	if (keycode == ESC)
 		exit(0);
 	if (keycode == I)
+	{
 		conf->state = conf->state == ISO ? FLAT : ISO;
+		refresh_map(conf);
+	}
 	if (keycode == UP && conf->state == ISO)
 		map_iterator(*conf, conf->map_iso, add_altitude);
 	if (keycode == DOWN && conf->state)

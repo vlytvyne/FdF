@@ -61,23 +61,25 @@ void	define_padding_iso(t_conf *conf)
 	conf->padding_iso.y = padding - first_vertex;
 }
 
-void	unset_paddings(t_conf conf, int state)
+void	change_padding(t_conf *conf, int state, int p_x, int p_y)
 {
 	int		y;
 	int		x;
 	t_point	**map;
-	t_coor	padd;
+	t_coor	*padd;
 
-	padd = conf.state == ISO ? conf.padding_iso : conf.padding_flat;
-	map = conf.state == ISO ? conf.map_iso : conf.map_flat;
+	padd = state == ISO ? &conf->padding_iso : &conf->padding_flat;
+	map = state == ISO ? conf->map_iso : conf->map_flat;
+	padd->x += p_x;
+	padd->y += p_y;
 	y = 0;
-	while (y < conf.map_height)
+	while (y < conf->map_height)
 	{
 		x = 0;
-		while (x < conf.map_width)
+		while (x < conf->map_width)
 		{
-			map[y][x].coor.x -= padd.x;
-			map[y][x].coor.y -= padd.y;
+			map[y][x].coor.x += p_x;
+			map[y][x].coor.y += p_y;
 			x++;
 		}
 		y++;
@@ -86,8 +88,8 @@ void	unset_paddings(t_conf conf, int state)
 
 void	set_paddings(t_conf conf, int state)
 {
-	int		y;
-	int		x;
+	int 	y;
+	int 	x;
 	t_point	**map;
 	t_coor	padd;
 

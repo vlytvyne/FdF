@@ -79,8 +79,8 @@ void		set_lines_len(t_conf conf, int len, int state);
 void		rotate_iso(t_conf conf);
 void 		define_len_padding_flat(t_conf *conf);
 void		define_padding_iso(t_conf *conf);
-void		set_paddings(t_conf conf, int state);
 
-void		unset_paddings(t_conf conf, int state);
+void	change_padding(t_conf *conf, int state, int p_x, int p_y);
+void	set_paddings(t_conf conf, int state);
 
 #endif
