@@ -14,6 +14,7 @@
 
 int		go_close(void *param)
 {
+	param = NULL;
 	exit(0);
 }
 

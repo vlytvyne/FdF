@@ -11,16 +11,7 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a1383a0c-0c65-430b-b8c8-3df48633f1ec" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/a.out" beforeDir="false" afterPath="$PROJECT_DIR$/a.out" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/includes/fdf.h" beforeDir="false" afterPath="$PROJECT_DIR$/includes/fdf.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/init_config.c" beforeDir="false" afterPath="$PROJECT_DIR$/init_config.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/iter" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.c" beforeDir="false" afterPath="$PROJECT_DIR$/main.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/paddings.c" beforeDir="false" afterPath="$PROJECT_DIR$/paddings.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/utils.c" beforeDir="false" afterPath="$PROJECT_DIR$/utils.c" afterDir="false" />
-    </list>
+    <list default="true" id="a1383a0c-0c65-430b-b8c8-3df48633f1ec" name="Default Changelist" comment="" />
     <ignored path="$PROJECT_DIR$/cmake-build-debug/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -31,94 +22,6 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="CMakeBuildProfile:Debug" />
   <component name="FavoritesManager">
     <favorites_list name="fdf" />
-  </component>
-  <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/main.c">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="800">
-              <caret line="40" column="1" selection-start-line="40" selection-start-column="1" selection-end-line="40" selection-end-column="1" />
-              <folding>
-                <element signature="e#892#910#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/key_hook.c">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="719">
-              <caret line="46" column="12" selection-start-line="46" selection-start-column="12" selection-end-line="46" selection-end-column="12" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/iterator.c">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="678">
-              <caret line="41" column="8" selection-start-line="41" selection-start-column="8" selection-end-line="41" selection-end-column="8" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/init_config.c">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="272">
-              <caret line="94" column="16" selection-start-line="94" selection-start-column="16" selection-end-line="94" selection-end-column="16" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/includes/fdf.h">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-15">
-              <caret line="53" column="20" selection-start-line="53" selection-start-column="19" selection-end-line="53" selection-end-column="20" />
-              <caret line="52" column="20" selection-start-line="52" selection-start-column="16" selection-end-line="52" selection-end-column="20" />
-              <folding>
-                <element signature="e#922#939#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/paddings.c">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1717">
-              <caret line="91" column="12" selection-start-line="91" selection-start-column="12" selection-end-line="91" selection-end-column="12" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/utils.c">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="562">
-              <caret line="77" selection-start-line="77" selection-end-line="77" />
-              <caret line="78" selection-start-line="78" selection-end-line="78" />
-              <caret line="79" selection-start-line="79" selection-end-line="79" />
-              <caret line="80" selection-start-line="80" selection-end-line="80" />
-              <caret line="81" selection-start-line="81" selection-end-line="81" />
-              <caret line="82" selection-start-line="82" selection-end-line="82" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/draw_line.c">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2440">
-              <caret line="122" column="43" selection-start-line="122" selection-start-column="43" selection-end-line="122" selection-end-column="43" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -156,6 +59,7 @@
       <find>window_height</find>
       <find>lenY</find>
       <find>window_width</find>
+      <find>chan</find>
     </findStrings>
     <replaceStrings>
       <replace>conn</replace>
@@ -191,16 +95,16 @@
         <option value="$PROJECT_DIR$/paddings.c" />
         <option value="$PROJECT_DIR$/utils.c" />
         <option value="$PROJECT_DIR$/iter" />
-        <option value="$PROJECT_DIR$/main.c" />
         <option value="$PROJECT_DIR$/includes/fdf.h" />
         <option value="$PROJECT_DIR$/iterator.c" />
         <option value="$PROJECT_DIR$/init_config.c" />
         <option value="$PROJECT_DIR$/key_hook.c" />
+        <option value="$PROJECT_DIR$/main.c" />
       </list>
     </option>
   </component>
   <component name="OCFindUsagesOptions" text="true" ivars="false" properties="true" derivedClasses="false" />
-  <component name="ProjectFrameBounds" fullScreen="true">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="width" value="2560" />
     <option name="height" value="1440" />
   </component>
@@ -293,12 +197,12 @@
       <workItem from="1549295706807" duration="766000" />
       <workItem from="1549370395873" duration="13258000" />
       <workItem from="1549450227026" duration="2256000" />
-      <workItem from="1549463889078" duration="972000" />
+      <workItem from="1549463889078" duration="1327000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="85336000" />
+    <option name="totallyTimeSpent" value="85691000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -310,10 +214,9 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="0" width="2560" height="1440" extended-state="0" />
-    <editor active="true" />
+    <frame x="0" y="0" width="2560" height="1440" extended-state="6" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49708286" visible="true" weight="0.15885623" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49708286" visible="true" weight="0.15885623" />
       <window_info id="Structure" order="1" sideWeight="0.5029172" side_tool="true" weight="0.14177918" />
       <window_info id="Favorites" order="2" sideWeight="0.50108933" side_tool="true" weight="0.14098491" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -325,7 +228,7 @@
       <window_info anchor="bottom" id="TODO" order="6" weight="0.20437956" />
       <window_info anchor="bottom" id="Database Changes" order="7" />
       <window_info anchor="bottom" id="Version Control" order="8" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="9" visible="true" weight="0.30437955" />
+      <window_info anchor="bottom" id="Terminal" order="9" visible="true" weight="0.30437955" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
       <window_info anchor="bottom" id="Messages" order="11" weight="0.32919708" />
       <window_info anchor="bottom" id="CMake" order="12" weight="0.329927" />
@@ -390,32 +293,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/draw_line.c">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2440">
-          <caret line="122" column="43" selection-start-line="122" selection-start-column="43" selection-end-line="122" selection-end-column="43" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/paddings.c">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1717">
-          <caret line="91" column="12" selection-start-line="91" selection-start-column="12" selection-end-line="91" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/utils.c">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="562">
-          <caret line="77" selection-start-line="77" selection-end-line="77" />
-          <caret line="78" selection-start-line="78" selection-end-line="78" />
-          <caret line="79" selection-start-line="79" selection-end-line="79" />
-          <caret line="80" selection-start-line="80" selection-end-line="80" />
-          <caret line="81" selection-start-line="81" selection-end-line="81" />
-          <caret line="82" selection-start-line="82" selection-end-line="82" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/iter">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="400">
@@ -425,21 +302,10 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/main.c">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="800">
-          <caret line="40" column="1" selection-start-line="40" selection-start-column="1" selection-end-line="40" selection-end-column="1" />
+        <state relative-caret-position="588">
+          <caret line="42" column="8" selection-start-line="42" selection-start-column="8" selection-end-line="42" selection-end-column="8" />
           <folding>
             <element signature="e#892#910#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/includes/fdf.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-15">
-          <caret line="53" column="20" selection-start-line="53" selection-start-column="19" selection-end-line="53" selection-end-column="20" />
-          <caret line="52" column="20" selection-start-line="52" selection-start-column="16" selection-end-line="52" selection-end-column="20" />
-          <folding>
-            <element signature="e#922#939#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -453,15 +319,51 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/init_config.c">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
+        <state relative-caret-position="364">
           <caret line="94" column="16" selection-start-line="94" selection-start-column="16" selection-end-line="94" selection-end-column="16" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/key_hook.c">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="719">
-          <caret line="46" column="12" selection-start-line="46" selection-start-column="12" selection-end-line="46" selection-end-column="12" />
+        <state relative-caret-position="283">
+          <caret line="25" column="12" selection-start-line="25" selection-start-column="8" selection-end-line="25" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/paddings.c">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1222">
+          <caret line="63" column="8" selection-start-line="63" selection-start-column="8" selection-end-line="63" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/includes/fdf.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="672">
+          <caret line="82" column="30" lean-forward="true" selection-start-line="82" selection-start-column="30" selection-end-line="82" selection-end-column="30" />
+          <folding>
+            <element signature="e#922#939#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/utils.c">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1439">
+          <caret line="77" selection-start-line="77" selection-end-line="77" />
+          <caret line="78" selection-start-line="78" selection-end-line="78" />
+          <caret line="79" selection-start-line="79" selection-end-line="79" />
+          <caret line="80" selection-start-line="80" selection-end-line="80" />
+          <caret line="81" selection-start-line="81" selection-end-line="81" />
+          <caret line="82" selection-start-line="82" selection-end-line="82" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/draw_line.c">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2440">
+          <caret line="122" column="43" selection-start-line="122" selection-start-column="43" selection-end-line="122" selection-end-column="43" />
         </state>
       </provider>
     </entry>
